@@ -1,33 +1,71 @@
-.App {
-  text-align: center;
+.client-testimonial-blog {
+	display: flex;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.client-testimonial-top-img-wrap {
+	width: 6vw;
+}
+.client-testimonial-top-img {
+	width: 100%;
+	object-fit: contain;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.client-testimonial-bottom-img-wrap {
+	width: 4vw;
+	display: flex;
+	align-items: flex-end;
+}
+.client-testimonial-bottom-img {
+	width: 100%;
+	object-fit: contain;
 }
 
-.App-link {
-  color: #61dafb;
+.client-message {
+	display: flex;
+	flex-direction: column;
+	padding: 0 3vw 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.client-message-title {
+	font-size: 2vw;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.52;
+	letter-spacing: normal;
+	text-align: left;
+	color: #f5913f;
+}
+
+.client-message-content {
+	font-size: 1.4vw;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.26;
+	letter-spacing: 1.78px;
+	text-align: left;
+	color: #001536;
+}
+
+.client-designation {
+	font-size: 1.1vw;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.7;
+	letter-spacing: 1.32px;
+	text-align: left;
+	color: #001536;
+}
+
+.client-company {
+	font-size: 1.1vw;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.7;
+	letter-spacing: 1.32px;
+	text-align: left;
+	color: #001536;
 }
