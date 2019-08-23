@@ -103,9 +103,8 @@ class Tooltip extends React.PureComponent {
 	constructor(props) {
 		super(props);
 		this.state = {
-			visible: props.defaultVisible || false,
+			visible: false
 			// generating id in constructor to keep it consistent across renders
-			id: props.id || 'tooltip'
 		};
 	}
 
@@ -114,15 +113,11 @@ class Tooltip extends React.PureComponent {
 	};
 
 	hideTooltip = () => {
-		if (this.props.defaultVisible) {
-			return;
-		}
 		this.setState({ visible: false });
 	};
 
 	render() {
-		const { content, ...props } = this.props;
-		const { id } = this.state;
+		const { content, showArrow, ...props } = this.props;
 
 		return (
 			<Manager>
@@ -159,17 +154,19 @@ class Tooltip extends React.PureComponent {
 										innerRef={ref}
 										style={{ zIndex: 20, ...style }}
 										data-placement={placement}
-										id={id}
+										id={props.id}
 										{...props}
 									>
 										{content}
-										<Arrow
-											data-placement={placement}
-											ref={arrowProps.ref}
-											style={arrowProps.style}
-											theme={props.theme}
-											arrowWidth={props.arrowWidth}
-										/>
+										{showArrow && (
+											<Arrow
+												data-placement={placement}
+												ref={arrowProps.ref}
+												style={arrowProps.style}
+												theme={props.theme}
+												arrowWidth={props.arrowWidth}
+											/>
+										)}
 									</ObservedElement>
 								) : null}
 							</>
@@ -182,14 +179,14 @@ class Tooltip extends React.PureComponent {
 }
 
 Tooltip.defaultProps = {
-	id: null,
+	id: 'tooltip-id',
 	theme: 'black',
 	arrowWidth: 6,
-	padding: 8,
+	padding: 6,
 	borderRadius: 3,
 	lineHeight: 1.4,
 	content: null,
-	position: 'top',
-	defaultVisible: false
+	position: 'bottom', //  ['top', 'bottom', 'left', 'right']
+	showArrow: false
 };
 export default Tooltip;
